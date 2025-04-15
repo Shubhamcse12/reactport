@@ -1,0 +1,115 @@
+.about-section {
+  padding: 4rem 8%;
+  background-color: #fff;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.about-content {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+/* Text Section */
+.about-text {
+  flex: 1;
+  min-width: 300px;
+}
+
+.about-text p {
+  font-size: 1.1rem;
+  color: #444;
+  margin-bottom: 1.2rem;
+}
+
+.resume-link {
+  display: inline-flex;
+  align-items: center;
+  margin-top: 1rem;
+  font-weight: 500;
+  color: #000;
+  text-decoration: none;
+}
+
+.resume-link .icon {
+  margin-right: 8px;
+  font-size: 1.2rem;
+}
+
+/* Stats Section */
+.about-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1.5rem;
+  flex: 1;
+  min-width: 300px;
+}
+
+.stat-box {
+  background-color: #f9fafb;
+  padding: 1.5rem;
+  border-radius: 12px;
+  text-align: center;
+}
+
+.stat-box h3 {
+  font-size: 2rem;
+  color: #111;
+}
+
+.stat-box p {
+  font-size: 1rem;
+  color: #555;
+}
+
+/* -----------------------------
+   Responsive Adjustments
+----------------------------- */
+
+/* Tablets */
+@media (max-width: 768px) {
+  .about-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .about-text,
+  .about-stats {
+    max-width: 100%;
+  }
+
+  .resume-link {
+    justify-content: center;
+  }
+}
+
+/* Phones */
+@media (max-width: 480px) {
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .about-text p {
+    font-size: 1rem;
+  }
+
+  .stat-box h3 {
+    font-size: 1.5rem;
+  }
+
+  .stat-box p {
+    font-size: 0.95rem;
+  }
+
+  .about-section {
+    padding: 2rem 5%;
+  }
+}

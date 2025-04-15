@@ -1,0 +1,144 @@
+.home-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 4rem 8%;
+  background-color: #f9fafb;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.home-text {
+  flex: 1 1 500px;
+  max-width: 600px;
+  text-align: left;
+}
+
+.home-text h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  color: #111;
+  margin-bottom: 1rem;
+}
+
+.home-text h1 span {
+  display: block;
+  font-weight: 800;
+  color: #007acc;
+}
+
+.home-text p {
+  font-size: 1.1rem;
+  color: #555;
+  margin-bottom: 2rem;
+}
+
+.home-buttons {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+/* Universal Button Style */
+.btn {
+  display: inline-block;
+  padding: 0.75rem 2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  text-align: center;
+  border-radius: 8px;
+  border: none;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+/* Primary Button */
+.btn.primary {
+  background-color: #111;
+  color: #fff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.btn.primary:hover {
+  background-color: #333;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Secondary Button */
+.btn.secondary {
+  background-color: transparent;
+  border: 2px solid #000;
+  color: #000;
+}
+
+.btn.secondary:hover {
+  background-color: #000;
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.home-image {
+  flex: 1 1 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.home-image img {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 12px;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+  .home-container {
+    flex-direction: column-reverse;
+    align-items: center;
+    text-align: center;
+    padding: 3rem 5%;
+  }
+
+  .home-text {
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .home-buttons {
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .home-text h1 {
+    font-size: 2.2rem;
+  }
+
+  .home-text p {
+    font-size: 1rem;
+  }
+
+  .home-buttons {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1rem;
+  }
+
+  .home-buttons .btn {
+    width: auto;
+    padding: 1rem 2rem;
+  }
+
+  .home-image img {
+    max-width: 100%;
+    margin-top: 2rem;
+  }
+}
