@@ -51,6 +51,22 @@ const ProjectModal = ({ project, onClose }) => {
             </div>
           )}
 
+          {project.images && project.images.length > 0 && (
+            <div className="modal-section">
+              <h3>🖼️ Project Gallery</h3>
+              <div className="image-slider">
+                {project.images.map((img, i) => (
+                  <img
+                    key={i}
+                    src={img}
+                    alt={`Project screenshot ${i + 1}`}
+                    className="slider-image"
+                  />
+                ))}
+              </div>
+            </div>
+          )}
+
           {project.video && (
             <div className="modal-section">
               <h3>🎥 Demo Video</h3>

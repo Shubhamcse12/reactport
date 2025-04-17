@@ -32,9 +32,12 @@ const Projects = () => {
       <div className="projects-grid">
         {filteredProjects.map((project, index) => (
           <div key={index} className="project-card">
-            <img src={project.image} alt={project.title} className="project-image" />
+            <div className="image-container">
+              <img src={project.image} alt={project.title} className="project-image" />
+              <span className="category-label">{project.category}</span>
+            </div>
             <h3 className="project-title">{project.title}</h3>
-            <p className="project-description">{project.description}</p>
+            <p className="project-description">{project.overview}</p>
             <div className="tech-tags">
               {project.tech.map((tech, idx) => (
                 <span key={idx} className="tech-badge">{tech}</span>

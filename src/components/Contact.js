@@ -1,25 +1,49 @@
-// Contact.jsx
-import React from 'react';
+import React, { useRef } from 'react';
 import './Contact.css';
 import { FaMapMarkerAlt, FaEnvelope, FaPhone, FaGithub, FaLinkedin } from 'react-icons/fa';
+import emailjs from '@emailjs/browser';
 
 const Contact = () => {
+  const form = useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs.sendForm(
+      process.env.REACT_APP_EMAILJS_SERVICE_ID,
+      process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
+      form.current,
+      process.env.REACT_APP_EMAILJS_PUBLIC_KEY
+    ).then(
+      (result) => {
+        console.log(result.text);
+        alert('Message sent successfully!');
+      },
+      (error) => {
+        console.log(error.text);
+        alert('Something went wrong. Please try again.');
+      }
+    );
+
+    e.target.reset();
+  };
+
   return (
     <section id="contact" className="contact-section">
       <h2 className="contact-title">Get in Touch</h2>
       <div className="contact-grid">
-        <form className="contact-form">
+        <form className="contact-form" ref={form} onSubmit={sendEmail}>
           <label>
             Name
-            <input type="text" placeholder="Your name" />
+            <input type="text" name="user_name" placeholder="Your name" required />
           </label>
           <label>
             Email
-            <input type="email" placeholder="Your email" />
+            <input type="email" name="user_email" placeholder="Your email" required />
           </label>
           <label>
             Message
-            <textarea placeholder="Your message" rows="5"></textarea>
+            <textarea name="message" placeholder="Your message" rows="5" required></textarea>
           </label>
           <button type="submit">Send Message</button>
         </form>
