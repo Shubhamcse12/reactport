@@ -3,7 +3,7 @@ const projectData = [
   {
     title: "Agribazzar",
     category: "Android",
-    image: "/images/agribazzar.jpg", 
+    image: "/images/Agribazzar.jpg", 
     images: [
       "/images/agribazzar1.png",
       "/images/agribazzar2.png",

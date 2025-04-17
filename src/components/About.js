@@ -15,7 +15,7 @@ const About = () => {
           <p>
             I've collaborated with  startups  to transform ideas into intuitive digital experiences.
           </p>
-          <a href="/resume.pdf" download className="resume-link" aria-label="Download Resume">
+          <a href="/Shubham Kumar - Resume.pdf" download className="resume-link" aria-label="Download Resume">
             <FiDownload className="icon" /> Download Resume
           </a>
         </div>
